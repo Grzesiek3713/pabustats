@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+{% autoescape off %}
+{% load static %}
+<head>
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Pabulib: {{state}}, {{city}}, {{year}}</title>
+    <meta name='google' content='notranslate'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'sorttable.js' %}"></script>
+    <script src="{% static 'apexcharts.min.js' %}"></script>
+</head>
+
+<body>
+    <h1>Pabulib: {{state}}, {{city}}, {{year}}</h1>
+    <p><a href="/wsgi/analysis/{{prev}}" > &larr; go back to form </a></p>
+
+    <p>Information about the instance:</p>
+          <ul>
+                    <li>Number of voters: {{voters_num}}</li>
+                    <li>Number of projects: {{projects_num}}</li>
+                    <li>Budget: {{budget}}</li>
+          </ul>
+
+    <h2>Projects table</h2>
+    <h3><ul>
+              <li>click on a table header to sort the rows</li>
+              <li><a href="#statistics">click here to go to the statistics below</a></li>
+</h3>
+    <table class='sortable'>
+    {{results}}
+    {{metric_score_utility}}
+    {{metric_cost_utility}}
+    {{metric_voter_strength}}
+    {{metric_subunit_strength}}
+    </table>
+
+{% endautoescape %}
+</html>

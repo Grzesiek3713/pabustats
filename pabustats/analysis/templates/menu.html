@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+{% autoescape off %}
+{% load static %}
+<head>
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>PABUSTATS</title>
+    <meta name='google' content='notranslate'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <h1>PABUSTATS</h1>
+    <h2>Participatory Budgeting Analysis</h2>
+    Do you want...
+    <p><a href="/wsgi/analysis/show">...to see analysis of existing Pabulib instances?</a></p>
+    <p><a href="/wsgi/analysis/showFile">...to analyze your own file?</a></p>
+
+{% endautoescape %}
+</html>
